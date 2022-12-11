@@ -1,0 +1,35 @@
+[
+    {
+        "MeetingID":"101",
+        "ClientName":"ABC Corp",
+        "ClientEmail":"abccorp@example.com",
+        "ClientPhone":"9853584695",
+        "POC":"Lucky Mark",
+        "POCPhone":"9985645325",
+        "Date":"12-26-2022",
+        "Time":"14:00",
+        "ScheduledOn":"12-12-2021"
+    },
+    {
+        "MeetingID":"102",
+        "ClientName":"Apple Inc",
+        "ClientEmail":"apple@example.com",
+        "ClientPhone":"9853514895",
+        "POC":"Teressa Frank",
+        "POCPhone":"9985641100",
+        "Date":"01-26-2021",
+        "Time":"11:30",
+        "ScheduledOn":"12-12-2022"
+    },
+    {
+        "MeetingID":"103",
+        "ClientName":"Google",
+        "ClientEmail":"google@example.com",
+        "ClientPhone":"9853211015",
+        "POC":"Ruby D",
+        "POCPhone":"9999584225",
+        "Date":"02-26-2023",
+        "Time":"17:00",
+        "ScheduledOn":"04-12-2022"
+    }
+]

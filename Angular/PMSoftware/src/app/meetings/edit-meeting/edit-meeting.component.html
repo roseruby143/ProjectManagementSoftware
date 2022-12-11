@@ -1,0 +1,63 @@
+<div class="modal-header gradient-custom-2">
+    <h5 class="modal-title" id="exampleModalLabel">Meeting Information</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()">
+     <!--  <span aria-hidden="true">&times;</span> -->
+    </button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="meetingInfoForm" ngNativeValidate>
+          <div class="modal-body pt-0">
+              <div class="form-group col mt-1" *ngIf="hasMeetingData">
+                    <label>Meeting ID<sup
+                        class="text-danger">*</sup></label>
+                    <input type="text" class="form-control text-secondary bg-light" name="meetingId" formControlName="meetingId" readonly required>
+                </div>
+
+              <div class="form-group col mt-2">
+                <label>Client Name<sup
+                    class="text-danger">*</sup></label>
+                <input type="text" class="form-control" name="clientName" formControlName="clientName" (change)="validateInputEmpty('clientName','Client Name')">
+            </div>
+            <div class="form-group col mt-2">
+                <label>Client Email<sup
+                    class="text-danger">*</sup></label>
+                <input type="text" id="meetingScheduleInputEmail" class="form-control" name="clientEmail" formControlName="clientEmail"  (change)="validateInputEmpty('clientEmail','Client Email')">
+            </div>
+            <div class="form-group col mt-2">
+                <label>Client Phone<sup
+                    class="text-danger">*</sup></label>
+                <input type="text" id="clientPhoneMeetingModal" class="form-control cust-requiredField" name="clientPhone" formControlName="clientPhone" (change)="validateInputEmpty('clientPhone','Client Phone')">
+            </div>
+            <div class="form-group col mt-2">
+                <label>Point of Contact<sup
+                    class="text-danger">*</sup></label>
+                <input type="text" id="meetingPOCModal" class="form-control cust-requiredField" name="POC" formControlName="POC" (change)="validateInputEmpty('POC','Point of Contact')">
+            </div>
+            <div class="form-group col mt-2">
+                <label>POC Phone</label>
+                <input type="text" class="form-control" name="POCPhone" formControlName="POCPhone">
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6 mt-2">
+                    <label>Meeting Date<sup
+                        class="text-danger">*</sup></label>
+                    <input type="date" id="meetingDateModal" class="form-control cust-requiredField" name="date" formControlName="date" (change)="validateInputEmpty('date','Date')">
+                </div>
+                <div class="form-group col-sm-6 mt-2">
+                    <label>Meeting Time<sup
+                        class="text-danger">*</sup></label>
+                    <input type="time" id="meetingTimeModal" class="form-control cust-requiredField" name="time" formControlName="time" (change)="validateInputEmpty('time','Meeting Time')">
+                </div>
+            </div>
+          </div>
+      </form>
+  </div>
+
+  <div class="modal-footer">
+      <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal" (click)="close()">
+        Cancel
+      </button>
+      <button type="submit" id="editMeetingModalButton" class="btn gradient-custom-2 btn-sm" [disabled]="saveButtonDisabled" (click)="updateMeeting(this)">
+        Save
+      </button>
+</div> 

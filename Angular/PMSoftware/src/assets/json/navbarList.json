@@ -1,0 +1,14 @@
+[
+    {
+        "navLis" : "Client Management",
+        "navListDropdown" : [
+            {"listName":"View all Clients","listValue":"/all-clients"}
+        ]
+    }, 
+    {
+        "navLis":"Meeting Management",
+        "navListDropdown":[
+            {"listName":"View Meetings","listValue":"/manage-meetings"}
+        ]
+    }
+]

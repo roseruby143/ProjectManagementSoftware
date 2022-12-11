@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="cust-client-mgmt-div col card mb-3 my-4 justify-content-center shadow">
+        <div class="row ">
+            <div class="d-flex gradient-custom-2 rounded-top py-3">
+                <div class="custom-card-head col-12 d-flex flex-column justify-content-center align-items-center">
+                    <div class="h1 align-self-center">{{projectTitle}}</div>
+                    <div class="h6 align-self-center text-wrap">Your smooth Client Management partner</div>
+                </div>
+            </div>
+            <div class="border-start border-secondary rounded-bottom">
+                <div class="card-body">
+                    <h5 class="card-title h2 text-secondary">Client Management</h5>
+                    <hr>
+                    
+                    <p class="card-text">
+                            <div class="pt-3 table-responsive">
+                                <table class="table table-bordered table-hover " *ngIf="allClients">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Client ID</th>
+                                            <th>Name</th>
+                                            <th>Email Address</th>
+                                            <th>Phone Number</th>
+                                            <th>Point of Contact</th>
+                                            <th>Status</th>
+                                            <th>Tier</th>
+                                            <th>Created On</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let data of allClients">
+                                            <td>{{data.ID}}</td>
+                                            <td>{{data.Name}}</td>
+                                            <td>{{data.EmailAddress}}</td>
+                                            <td>{{data.PhoneNumber}}</td>
+                                            <td>{{data.PointofContact}}</td>
+                                            <td>{{data.ClientStatus}}</td>
+                                            <td>{{data.ClientTier}}</td>
+                                            <td>{{data.CreatedOn | date }}</td>
+                                            <!-- <td class="d-flex justify-content-evenly">
+                                                <a [class]='data.ID' role="button" data-bs-toggle="modal" data-bs-target="#clientEditModal" (click)="modalShowHandler($event)"><i class="fa fa-edit"></i></a>
+                                                <a [class]='data.ID' role="button"><i class="fa fa-trash"></i></a>
+                                            </td> -->
+                                            <td class="d-flex justify-content-evenly">
+                                                <a [class]='data.ID' role="button" (click)="openClientAddEditModal(clientAddEditModal,data)"><i class="fa fa-edit custIconColor"></i></a>
+                                                <a [class]='data.ID' role="button" (click)="deleteClient(data.ID)"><i class="fa fa-trash custIconColor"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="d-flex justify-content-end align-items-center">
+                            <button class="btn gradient-custom-2 me-1" (click)="openClientAddEditModal(clientAddEditModal)" >Add New Client</button>
+                        </div>
+                    <!-- </p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #clientAddEditModal let-modal class="bg-modal">
+    <app-edit-client [clientInfo]="clientInfo" (closeModel)="closeModel(clientAddEditModal)"></app-edit-client>
+</ng-template>

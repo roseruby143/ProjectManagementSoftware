@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-1 col-lg-2 "></div>
+    <div class="cust-welcome-pg-div col card mb-3 my-4 justify-content-center shadow" style="max-width: 992px">
+        <div class="row ">
+            <div class="d-flex gradient-custom-2 rounded-top py-3">
+                <div
+                    class="custom-card-head col-12 text-light d-flex flex-column justify-content-center align-items-center">
+                    <div class="h1 align-self-center">{{projectTitle}}</div>
+                    <div class="h6 align-self-center text-wrap">Your smooth Client Management partner</div>
+                </div>
+            </div>
+            <div class="border-secondary rounded-bottom">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body text-center py-5">
+                    <h5 class="card-title">Welcome to Project Buddy, Your smooth client management partner!</h5>
+                    <p class="card-text">Select from the following option</p>
+                    <div class="d-flex justify-content-between pt-3 flex-column flex-lg-row px-sm-5 px-lg-0">
+                        <a [routerLink]="'/all-clients'" class="btn gradient-custom-2 my-1">View all Clients</a>
+                        <a [routerLink]="'/client-creation'" class="btn gradient-custom-2 my-1">Create a Client</a>
+                        <a [routerLink]="'/manage-meetings'" class="btn gradient-custom-2 my-1">Go to Meetings</a>
+                        <a [routerLink]="'/schedule-meeting'" class="btn gradient-custom-2 my-1">Schedule a Meeting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1 col-lg-2 "></div>
+</div>

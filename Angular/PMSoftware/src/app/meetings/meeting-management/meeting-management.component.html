@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="cust-client-mgmt-div col card mb-3 my-4 justify-content-center shadow">
+        <div class="row ">
+            <div class="d-flex gradient-custom-2 rounded-top py-3">
+                <div
+                    class="custom-card-head col-12 text-light d-flex flex-column justify-content-center align-items-center">
+                    <div class="h1 align-self-center">{{projectTitle}}</div>
+                    <div class="h6 align-self-center text-wrap">Your smooth Client Management partner</div>
+                </div>
+            </div>
+            <div class="border-start border-secondary rounded-bottom">
+                <div class="card-body">
+                    <h5 class="card-title h2 text-secondary">Meeting Management</h5>
+                    <hr>
+                    
+                    <p class="card-text">
+                            <div class="pt-3 table-responsive">
+                                <table class="table table-bordered table-hover " *ngIf="meetingList">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Meeting ID</th>
+                                            <th>Client Name</th>
+                                            <th>Client Email</th>
+                                            <th>Client Phone</th>
+                                            <th>Point of Contact</th>
+                                            <th>POC Phone</th>
+                                            <th>Date & Time</th>
+                                            <th>Scheduled On</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let data of meetingList">
+                                            <td>{{data.MeetingID}}</td>
+                                            <td>{{data.ClientName}}</td>
+                                            <td>{{data.ClientEmail}}</td>
+                                            <td>{{data.ClientPhone}}</td>
+                                            <td>{{data.POC}}</td>
+                                            <td>{{data.POCPhone}}</td>
+                                            <td>{{data.Date | date}} {{data.Time}}</td>
+                                            <td>{{data.ScheduledOn | date}}</td>
+                                            <td class="d-flex justify-content-evenly">
+                                                <a [class]='data.ID' role="button" (click)="openMeetingAddEditModal(meetingScheduleEditModal,data)"><i class="fa fa-edit"></i></a>
+                                                <a [class]='data.ID' role="button" (click)="cancelMeeting(data.ID)"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="d-flex justify-content-end align-items-center">
+                            <button class="btn gradient-custom-2 me-1" (click)="openMeetingAddEditModal(meetingScheduleEditModal)" >Schedule New Meeting</button>
+                        </div>
+                    <!-- </p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #meetingScheduleEditModal let-modal class="bg-modal">
+    <app-edit-meeting [meetingInfo]="meetingInfo" (closeModel)="closeModel(meetingScheduleEditModal)"></app-edit-meeting>
+</ng-template>
