@@ -7,7 +7,7 @@ mysql >   CREATE TABLE CLIENT_DATA
             POINTOFCONTACT varchar(255) NOT NULL,
             CLIENT_STATUS varchar(255),
             CLIENT_TIER varchar(255),
-            CREATED_ON varchar(255),
+            CREATED_ON DATE DEFAULT CURRENT_DATE,
             PRIMARY KEY (CLIENT_ID)
          );
 
